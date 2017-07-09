@@ -32,6 +32,8 @@
         <link rel="stylesheet" href="assets/css/main.css">
         <!-- responsive css -->
         <link rel="stylesheet" href="assets/css/responsive.css">
+        <!-- app css (angular css) -->
+        <!-- <link rel="stylesheet" href="assets/css/app.css"> -->
         
         <!-- Template Javascript Files
         ================================================== -->
@@ -48,6 +50,8 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
         <!-- ngRoute -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+        <!-- ngAnimate -->
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.min.js"></script> -->
         
         <!-- App
         ================================================== -->
@@ -65,10 +69,15 @@
         <!-- Components
         ================================================== -->
         <!-- Home -->
-        <script src="app/components/home/home.module.js"></script>
+        <script src="app/components/homepage/homepage.module.js"></script>
+
+        <!-- Static Pages -->
+        <script src="app/components/static/static.module.js"></script>
+        <script src="app/components/static/static.routes.js"></script>
 
         <!-- Error 404 -->
         <script src="app/components/error404/error404.module.js"></script>
+        <script src="app/components/error404/error404.routes.js"></script>
 
 
 
@@ -94,7 +103,7 @@
                     
                     <!-- logo -->
                     <div class="navbar-brand">
-                        <a href="index.html" >
+                        <a href="./" >
                             <img src="assets/images/logo.png" alt="">
                         </a>
                     </div>
@@ -104,10 +113,10 @@
                 <nav class="collapse navbar-collapse navbar-right" role="navigation">
                     <div class="main-menu">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="index.html">HOME</a></li>
-                            <li><a href="quakes-map.html">QUAKES MAP</a></li>
-                            <li><a href="why-this-project.html">WHY THIS PROJECT</a></li>
-                            <li><a href="http://apiary.io">DOCS</a></li>
+                            <li><a href="./">HOME</a></li>
+                            <li><a href="./map">QUAKES MAP</a></li>
+                            <li><a href="./project">WHY THIS PROJECT</a></li>
+                            <li><a href="http://docs.openquake.apiary.io/">DOCS</a></li>
 
                             <!--DROPDOWN LOGIN-->
                             <li class="dropdown hidden-xs">
@@ -145,11 +154,11 @@
                                 <a href="#" class="dropdown-toggle username" data-toggle="dropdown">alessandro1105</a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="account-account-info.html">Account Info</a></li>
-                                        <li><a href="account-my-stations.html">My Stations</a></li>
-                                        <li><a href="account-readings.html">Readings</a></li>
+                                        <li><a href="./account/info">Account Info</a></li>
+                                        <li><a href="./account/stations">My Stations</a></li>
+                                        <li><a href="./account/readings">Readings</a></li>
                                         <hr class="hidden-xs">
-                                        <li><a href="index.html" style="border: none;">Log out</a></li>
+                                        <li><a href="#" style="border: none;">Log out</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -168,7 +177,7 @@
         ==================================================
         Content Section Start
         ================================================== -->
-        <ng-view></ng-view>
+        <ng-view autoscroll></ng-view>
         <!--
         ==================================================
         Content Section End
@@ -188,13 +197,13 @@
                                     <h4>Project</h4>
                                     <ul>
                                         <li>
-                                            <a href="why-this-project.html">Why this project</a>
+                                            <a href="./project">Why this project</a>
                                         </li>
                                         <li>
-                                            <a href="how-to-contribute.html">How to contribute</a>
+                                            <a href="./contribute">How to contribute</a>
                                         </li>
                                         <li>
-                                            <a href="open-source.html">Open Source</a>
+                                            <a href="./open-source">Open Source</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -205,10 +214,10 @@
                                     <h4>Learn</h4>
                                     <ul>
                                         <li>
-                                            <a href="http://apiary.io">Documentation</a>
+                                            <a href="http://docs.openquake.apiary.io/">Documentation</a>
                                         </li>
                                         <li>
-                                            <a href="faq.html">FAQ</a>
+                                            <a href="./faq">FAQ</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -221,10 +230,10 @@
                                     <h4>About</h4>
                                     <ul>
                                         <li>
-                                            <a href="team.html">Team</a>
+                                            <a href="./team">Team</a>
                                         </li>
                                         <li>
-                                            <a href="contact.html">Contact</a>
+                                            <a href="./contact">Contact</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -235,10 +244,10 @@
                                     <h4>Links</h4>
                                     <ul>
                                         <li>
-                                            <a href="privacy-policy.html">Privacy policy</a>
+                                            <a href="./privacy">Privacy policy</a>
                                         </li>
                                         <li>
-                                            <a href="terms-of-service.html">Terms of service</a>
+                                            <a href="./tos">Terms of service</a>
                                         </li>
                                     </ul>
                                 </div>

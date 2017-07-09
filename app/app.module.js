@@ -1,2 +1,2 @@
 //app
-angular.module("app", ["app.routes", "ngRoute", "home", "error404"]);
+angular.module("app", ["app.routes", "homepage", "static", "error404"]);

@@ -9,16 +9,9 @@ angular.module("app.routes", ["ngRoute"])
 
 	//----ROUTES----
 
-	// home
+	// homepage routes
 	$routeProvider.when("/", {
-		templateUrl: "app/components/home/home.tpl.html"
-	});
-
-	// 404
-	$routeProvider.otherwise({
-		templateUrl: "app/components/error404/error404.tpl.html"
-	})
-
-	
+		templateUrl: "app/components/homepage/homepage.tpl.html"
+	});	
 
 });
