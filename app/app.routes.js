@@ -1,18 +1,23 @@
-//Modulo contenente i routes principali dell'applicazione
+// Modulo contenente i routes principali dell'applicazione
 
 angular.module("app.routes", ["ngRoute"])
 
 .config(function ($routeProvider, $locationProvider) {
 
-	//verifico se il brower supporta HTML5 MURLs
-	if (window.history && history.pushState) {
-		$locationProvider.html5Mode(true);
-	}
+	// Abilito HTML5 MURLs
+	$locationProvider.html5Mode(true);
 
-	//routes
+	//----ROUTES----
+
+	// home
 	$routeProvider.when("/", {
 		templateUrl: "app/components/home/home.tpl.html"
 	});
+
+	// 404
+	$routeProvider.otherwise({
+		templateUrl: "app/components/error404/error404.tpl.html"
+	})
 
 	
 

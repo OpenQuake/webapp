@@ -1,2 +1,3 @@
-// Modulo home
-angular.module("home", [])
+// Modulo Home
+
+angular.module("home", []);
