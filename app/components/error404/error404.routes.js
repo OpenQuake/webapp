@@ -14,6 +14,4 @@ angular.module("error404.routes", ["ngRoute"])
 		templateUrl: "app/components/error404/error404.tpl.html"
 	})
 
-	
-
 });
