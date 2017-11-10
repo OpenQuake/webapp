@@ -1,38 +1,45 @@
 // Module to route static content pages
 
-angular.module("static.routes", ["ngRoute"])
+angular.module("static.routes", ["ui.router"])
 
-.config(function ($routeProvider, $locationProvider) {
+.config(function ($stateProvider, $locationProvider) {
 
 	// Enabling HTML5 MURLs
 	$locationProvider.html5Mode(true);
 
 	//----ROUTES----
-	$routeProvider.when("/project", {
+	$stateProvider.state("project", {
+		url: "/project",
 		templateUrl: "app/components/static/project/project.tpl.html"
 	});
 
-	$routeProvider.when("/contribute", {
+	$stateProvider.state("contribute", {
+		url: "/contribute",
 		templateUrl: "app/components/static/contribute/contribute.tpl.html"
 	});
 
-	$routeProvider.when("/open-source", {
+	$stateProvider.state("open-source", {
+		url: "/open-source",
 		templateUrl: "app/components/static/open-source/open-source.tpl.html"
 	});
 
-	$routeProvider.when("/faq", {
+	$stateProvider.state("faq", {
+		url: "/faq",
 		templateUrl: "app/components/static/faq/faq.tpl.html"
 	});
 
-	$routeProvider.when("/team", {
+	$stateProvider.state("team", {
+		url: "/team",
 		templateUrl: "app/components/static/team/team.tpl.html"
 	});
 
-	$routeProvider.when("/privacy", {
+	$stateProvider.state("privacy", {
+		url: "/privacy",
 		templateUrl: "app/components/static/privacy/privacy.tpl.html"
 	});
 
-	$routeProvider.when("/tos", {
+	$stateProvider.state("tos", {
+		url: "/tos",
 		templateUrl: "app/components/static/tos/tos.tpl.html"
 	});
 	

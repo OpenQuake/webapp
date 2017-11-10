@@ -1,8 +1,8 @@
 // Modulo contenente i routes principali dell'applicazione
 
-angular.module("app.routes", ["ngRoute"])
+angular.module("app.routes", ["ui.router"])
 
-.config(function ($routeProvider, $locationProvider) {
+.config(function ($stateProvider, $locationProvider) {
 
 	// Abilito HTML5 MURLs
 	$locationProvider.html5Mode(true);
@@ -10,8 +10,9 @@ angular.module("app.routes", ["ngRoute"])
 	//----ROUTES----
 
 	// homepage routes
-	$routeProvider.when("/", {
+	$stateProvider.state("homepage", {
+		url: "/",
 		templateUrl: "app/components/homepage/homepage.tpl.html"
-	});	
+	});
 
 });
