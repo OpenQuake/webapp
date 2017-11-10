@@ -1,7 +1,2 @@
 //app
-angular.module("app", ["ui.bootstrap", "app.routes", "homepage", "error404", "static"])
-
-//main controller
-.controller("mainCtrl", function ($scope) {
-
-})
+angular.module("openquake", ["ui.bootstrap", "ui.router", "homepage", "error404", "static"]);

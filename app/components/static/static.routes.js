@@ -1,13 +1,9 @@
 // Module to route static content pages
 
-angular.module("static.routes", ["ui.router"])
+angular.module("static")
 
-.config(function ($stateProvider, $locationProvider) {
+.config(function ($stateProvider) {
 
-	// Enabling HTML5 MURLs
-	$locationProvider.html5Mode(true);
-
-	//----ROUTES----
 	$stateProvider.state("project", {
 		url: "/project",
 		templateUrl: "app/components/static/project/project.tpl.html"
@@ -42,6 +38,5 @@ angular.module("static.routes", ["ui.router"])
 		url: "/tos",
 		templateUrl: "app/components/static/tos/tos.tpl.html"
 	});
-	
 
 });

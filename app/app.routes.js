@@ -1,18 +1,22 @@
-// Modulo contenente i routes principali dell'applicazione
+angular.module("openquake")
 
-angular.module("app.routes", ["ui.router"])
+.config(function ($urlRouterProvider, $locationProvider) {
 
-.config(function ($stateProvider, $locationProvider) {
-
-	// Abilito HTML5 MURLs
+	// Enabling HTML5 MURLs
 	$locationProvider.html5Mode(true);
 
 	//----ROUTES----
+	//homepage main routes
+	$urlRouterProvider.when("/", function ($state) {
+		$state.go("homepage");
+	});
 
-	// homepage routes
-	$stateProvider.state("homepage", {
-		url: "/",
-		templateUrl: "app/components/homepage/homepage.tpl.html"
+	//error404 main routes
+	$urlRouterProvider.otherwise(function ($injector) {
+		//getting $state service from $injector
+		$state = $injector.get("$state");
+		//transition to the error404 state
+		$state.go("error404");
 	});
 
 });
