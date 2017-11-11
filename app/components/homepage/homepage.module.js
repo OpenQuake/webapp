@@ -1,8 +1,3 @@
-// Modulo Home
+//Homepage module
 
 angular.module("homepage", ["ui.router"])
-
-//main controller
-.controller("mainCtrl", function ($scope) {
-
-})

@@ -53,109 +53,36 @@
 
         <!-- Common
         ================================================== -->
-
-        <!-- Shared
-        ================================================== -->
+        <!-- Header -->
+        <script src="app/common/header/header.module.js"></script>
+        <script src="app/common/header/header.directive.js"></script>
+        <!-- Footer -->
+        <script src="app/common/footer/footer.module.js"></script>
+        <script src="app/common/footer/footer.directive.js"></script>
 
         <!-- Components
         ================================================== -->
         <!-- Home -->
         <script src="app/components/homepage/homepage.module.js"></script>
         <script src="app/components/homepage/homepage.routes.js"></script>
-
         <!-- Static Pages -->
         <script src="app/components/static/static.module.js"></script>
         <script src="app/components/static/static.routes.js"></script>
-
+        <!-- Account -->
+        <script src="app/components/account/account.module.js"></script>
+        <script src="app/components/account/account.routes.js"></script>
         <!-- Error 404 -->
         <script src="app/components/error404/error404.module.js"></script>
         <script src="app/components/error404/error404.routes.js"></script>
 
     </head>
-    <body ng-controller="mainCtrl">
+    <body>
+
         <!--
         ==================================================
         Header Section Start
         ================================================== -->
-        <header id="top-bar" class="navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- responsive nav button -->
-                    <button type="button" class="navbar-toggle" ng-init="isNavCollapsed = true" ng-click="isNavCollapsed = !isNavCollapsed">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <!-- /responsive nav button -->
-                    
-                    <!-- logo -->
-                    <div class="navbar-brand">
-                        <a href="./" >
-                            <img src="assets/images/logo.png" alt="">
-                        </a>
-                    </div>
-                    <!-- /logo -->
-                </div>
-                <!-- main menu -->
-                <nav class="collapse navbar-collapse navbar-right" role="navigation" uib-collapse="isNavCollapsed">
-                    <div class="main-menu">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="./">HOME</a></li>
-                            <li><a href="./map">QUAKES MAP</a></li>
-                            <li><a href="./project">WHY THIS PROJECT</a></li>
-                            <li><a href="http://docs.openquake.apiary.io/">DOCS</a></li>
-
-                            <!--DROPDOWN LOGIN-->
-                            <li class="dropdown hidden-xs">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">LOG IN</a>
-                                <div class="dropdown-menu">
-                                    <div class="login shadow">
-                                        <h3 class="title">Welcome</h3>
-                                        <form>
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Account name or email address" class="form-control">
-                                            </div>
-                                            
-                                            <div class="form-group">
-                                                <input type="password" placeholder="Password" class="form-control">
-                                            </div>
-                                            <a href="forgot-password-1.html" class="forgot-password">Forgot your password?</a>
-
-                                            <div class="button">
-                                                <a class="btn btn-primary" href="account-account-info.html">LOG IN</a>
-                                            </div>
-
-                                            <div class="button">
-                                                <a class="btn btn-primary" href="registration.html">SIGN UP</a>
-                                            </div>
-
-                                        </form>
-                                    </div>    
-                                </div>
-                            </li>
-
-                            <!--LINK LOGIN-->
-                            <li><a class="visible-xs" href="login.html">LOG IN</a></li>
-
-                            <li class="dropdown logged">
-                                <a href="#" class="dropdown-toggle username" data-toggle="dropdown">alessandro1105</a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="./account/info">Account Info</a></li>
-                                        <li><a href="./account/stations">My Stations</a></li>
-                                        <li><a href="./account/readings">Readings</a></li>
-                                        <hr class="hidden-xs">
-                                        <li><a href="#" style="border: none;">Log out</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <!-- /main nav -->
-            </div>
-        </header>
+        <oq-header></oq-header>
         <!--
         ==================================================
         Header Section End
@@ -175,89 +102,11 @@
         ==================================================
         Footer Section Start
         ================================================== -->
-        <footer id="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-3 hidden-xs">
-                                <div class="links">
-                                    <h4>Project</h4>
-                                    <ul>
-                                        <li>
-                                            <a href="./project">Why this project</a>
-                                        </li>
-                                        <li>
-                                            <a href="./contribute">How to contribute</a>
-                                        </li>
-                                        <li>
-                                            <a href="./open-source">Open Source</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-3 hidden-xs">
-                                <div class="links">
-                                    <h4>Learn</h4>
-                                    <ul>
-                                        <li>
-                                            <a href="http://docs.openquake.apiary.io/">Documentation</a>
-                                        </li>
-                                        <li>
-                                            <a href="./faq">FAQ</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="clearfix visible-xs"></div>
-
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="links">
-                                    <h4>About</h4>
-                                    <ul>
-                                        <li>
-                                            <a href="./team">Team</a>
-                                        </li>
-                                        <li>
-                                            <a href="./contact">Contact</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="links">
-                                    <h4>Links</h4>
-                                    <ul>
-                                        <li>
-                                            <a href="./privacy">Privacy policy</a>
-                                        </li>
-                                        <li>
-                                            <a href="./tos">Terms of service</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="row">
-                            <div class="col-md-12 text-right">
-                                <p>Copyright &copy; 2017 OpenQuake. Delevoped by Alessandro Pasqualini</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <oq-footer></oq-footer>
         <!--
         ==================================================
         Footer Section End
         ================================================== -->
-
 
     </body>
 </html>

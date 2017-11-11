@@ -1,2 +1,2 @@
 //app
-angular.module("openquake", ["ui.bootstrap", "ui.router", "homepage", "error404", "static"]);
+angular.module("openquake", ["ui.bootstrap", "ui.router", "header", "footer", "homepage", "error404", "static", "account"]);

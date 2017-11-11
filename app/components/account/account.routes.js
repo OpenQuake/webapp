@@ -1,56 +1,53 @@
-// Modulo per routing modulo Account
+// Routes for the account module
+angular.module("account")
 
-angular.module("account.routes", ["ngRoute"])
+.config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider) {
 
-// .config(function ($routeProvider, $locationProvider) {
+	// ui-router non strict mode and case insensitive
+	$urlMatcherFactoryProvider.caseInsensitive(true);
+	$urlMatcherFactoryProvider.strictMode(false); 
 
-// 	// Abilito HTML5 MURLs
-// 	$locationProvider.html5Mode(true);
-
-// 	//----ROUTES----
-
-// 	// home
-// 	$routeProvider.when("account/", {
-// 		templateUrl: "app/components/home/home.tpl.html"
-// 	});
-
-// 	// $routeProvider.when("/map", {
-// 	// 	templateUrl: "#"
-// 	// });
-
-// 	// $routeProvider.when("/project", {
-// 	// 	templateUrl: "#"
-// 	// });
-
-// 	// $routeProvider.when("/contribute", {
-// 	// 	templateUrl: "#"
-// 	// });
-
-// 	// $routeProvider.when("/open-source", {
-// 	// 	templateUrl: "#"
-// 	// });
-
-// 	// $routeProvider.when("/faq", {
-// 	// 	templateUrl: "#"
-// 	// });
-
-// 	// $routeProvider.when("/team", {
-// 	// 	templateUrl: "#"
-// 	// });
-
-// 	// $routeProvider.when("/privacy", {
-// 	// 	templateUrl: "#"
-// 	// });
-
-// 	// $routeProvider.when("/tos", {
-// 	// 	templateUrl: "#"
-// 	// });
-
-// 	// 404
-// 	$routeProvider.otherwise({
-// 		templateUrl: "app/components/error404/error404.tpl.html"
-// 	})
-
+	// Enabling HTML5 MURLs
+	$locationProvider.html5Mode(true);
 	
+	// State definitions
+	
+	//Account base URL
+	$stateProvider.state("account", {
+		url: "/account",
+		templateUrl: "app/components/account/account.tpl.html",
+		redirectTo: 'account.info'
+	});
 
-// });
+	//Account info URL
+	$stateProvider.state("account.info", {
+		url: "/info",
+		templateUrl: "app/components/account/account/info/info.tpl.html"
+	});
+
+	$stateProvider.state("account.delete", {
+		url: "/delete",
+		templateUrl: "app/components/account/account/delete/delete.tpl.html"
+	});
+
+	// //My Stations URL
+	// $stateProvider.state("account.my-stations", {
+	// 	url: "/my-stations",
+	// 	templateUrl: "app/components/account/account.tpl.html"
+	// });
+
+	// $stateProvider.state("account.delete", {
+	// 	url: "/delete",
+	// 	templateUrl: "app/components/account/account.tpl.html"
+	// });
+
+
+	//If /account redirect to /account/info
+	// $urlRouterProvider.when("/account", function ($state) {
+	// 	//$state.go("account.info");
+	// 	alert("JEY2");
+	// });
+
+
+
+});

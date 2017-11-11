@@ -1,3 +1,2 @@
-// Modulo account (contiene tutte le pagine loggate)
-
-angular.module("account", []);
+//Account module (reserved part)
+angular.module("account", ["ui.router"]);

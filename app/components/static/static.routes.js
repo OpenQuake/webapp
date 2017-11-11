@@ -2,8 +2,16 @@
 
 angular.module("static")
 
-.config(function ($stateProvider) {
+.config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider) {
 
+	// ui-router non strict mode and case insensitive
+	$urlMatcherFactoryProvider.caseInsensitive(true);
+	$urlMatcherFactoryProvider.strictMode(false);
+
+	// Enabling HTML5 MURLs
+	$locationProvider.html5Mode(true);
+	
+	// State definitions
 	$stateProvider.state("project", {
 		url: "/project",
 		templateUrl: "app/components/static/project/project.tpl.html"

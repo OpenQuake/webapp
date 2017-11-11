@@ -1,8 +1,12 @@
 angular.module("openquake")
 
-.config(function ($urlRouterProvider, $locationProvider) {
+.config(function ($urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider) {
 
-	// Enabling HTML5 MURLs
+	// ui-router non strict mode and case insensitive
+	$urlMatcherFactoryProvider.caseInsensitive(true);
+	$urlMatcherFactoryProvider.strictMode(false); 
+
+	// // Enabling HTML5 MURLs
 	$locationProvider.html5Mode(true);
 
 	//----ROUTES----
