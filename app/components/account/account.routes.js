@@ -9,45 +9,53 @@ angular.module("account")
 
 	// Enabling HTML5 MURLs
 	$locationProvider.html5Mode(true);
-	
-	// State definitions
-	
-	//Account base URL
+
+	//--- MAIN STATE ---
+	//page container view (abstract state)
 	$stateProvider.state("account", {
-		url: "/account",
-		templateUrl: "app/components/account/account.tpl.html",
+		abstract: true,
+		templateUrl: "app/components/account/page-container/page-container.tpl.html",
 		redirectTo: 'account.info'
 	});
 
-	//Account info URL
-	$stateProvider.state("account.info", {
-		url: "/info",
-		templateUrl: "app/components/account/account/info/info.tpl.html"
+	//--- SUBSTATE /account/* definitions ---
+	$stateProvider.state("account.account-info", {
+		url: "/account/info",
+		templateUrl: "app/components/account/account/info/account-info.tpl.html"
 	});
 
-	$stateProvider.state("account.delete", {
-		url: "/delete",
-		templateUrl: "app/components/account/account/delete/delete.tpl.html"
+	//account.delete
+	$stateProvider.state("account.account-delete", {
+		url: "/account/delete",
+		templateUrl: "app/components/account/account/delete/account-delete.tpl.html"
 	});
 
-	// //My Stations URL
-	// $stateProvider.state("account.my-stations", {
-	// 	url: "/my-stations",
-	// 	templateUrl: "app/components/account/account.tpl.html"
-	// });
+	//--- SUBSTATE /stations/* ---
+	$stateProvider.state("account.my-stations", {
+		url: "/stations",
+		templateUrl: "app/components/account/my-stations/my-stations.tpl.html",
+	});
 
-	// $stateProvider.state("account.delete", {
-	// 	url: "/delete",
-	// 	templateUrl: "app/components/account/account.tpl.html"
-	// });
+	//--- SUBSTATE /station/* ---
+	$stateProvider.state("account.station-edit", {
+		url: "/station/edit",
+		templateUrl: "app/components/account/station/edit/station-edit.tpl.html",
+	});
 
+	$stateProvider.state("account.station-new", {
+		url: "/station/new",
+		templateUrl: "app/components/account/station/new/station-new.tpl.html",
+	});
 
-	//If /account redirect to /account/info
-	// $urlRouterProvider.when("/account", function ($state) {
-	// 	//$state.go("account.info");
-	// 	alert("JEY2");
-	// });
+	$stateProvider.state("account.station-settings", {
+		url: "/station/settings",
+		templateUrl: "app/components/account/station/settings/station-settings.tpl.html",
+	});
 
-
+	//--- SUBSTATE /readings/* definitions ---
+	$stateProvider.state("account.readings", {
+		url: "/readings",
+		templateUrl: "app/components/account/readings/readings.tpl.html"
+	});
 
 });
