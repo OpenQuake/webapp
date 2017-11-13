@@ -1,4 +1,4 @@
-// Modulo per il routing della pagina di errore 404
+// Routing user module
 
 angular.module("user")
 
@@ -16,7 +16,8 @@ angular.module("user")
 	//--- Login ---
 	$stateProvider.state("login", {
 		url: "/login",
-		templateUrl: "app/components/user/login/login.tpl.html"
+		templateUrl: "app/components/user/login/login.tpl.html",
+		controller: "loginCtrl"
 	});
 
 	//--- Registration ---
@@ -33,25 +34,21 @@ angular.module("user")
 	});
 
 	$stateProvider.state("forgot-password-step1", {
-		url: "/forgotpassword/step1",
 		templateUrl: "app/components/user/forgot-password/step1/forgot-password-step1.tpl.html"
 	});
 
 	//forgot-password
 	$stateProvider.state("forgot-password-step2", {
-		url: "/forgotpassword/step2",
 		templateUrl: "app/components/user/forgot-password/step2/forgot-password-step2.tpl.html"
 	});
 
 	//forgot-password
 	$stateProvider.state("forgot-password-step3", {
-		url: "/forgotpassword/step3",
 		templateUrl: "app/components/user/forgot-password/step3/forgot-password-step3.tpl.html"
 	});
 
 	//forgot-password
 	$stateProvider.state("forgot-password-step4", {
-		url: "/forgotpassword/step4",
 		templateUrl: "app/components/user/forgot-password/step4/forgot-password-step4.tpl.html"
 	});
 
