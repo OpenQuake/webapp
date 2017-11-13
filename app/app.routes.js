@@ -1,6 +1,6 @@
 angular.module("openquake")
 
-.config(function ($urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider) {
+.config(function ($urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider, $stateProvider) {
 
 	// ui-router non strict mode and case insensitive
 	$urlMatcherFactoryProvider.caseInsensitive(true);
@@ -11,6 +11,11 @@ angular.module("openquake")
 
 	//----ROUTES----
 	//homepage main routes
+	$stateProvider.state("index", {
+		template: "<ui-view></ui-view>",
+		redirectTo: "homepage"
+	})
+
 	$urlRouterProvider.when("/", function ($state) {
 		$state.go("homepage");
 	});
